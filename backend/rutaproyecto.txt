@@ -1,0 +1,66 @@
+
+--COMPLETADO--FASE 1 – Autenticación y base del sistema
+*Login y emisión de JWT ( ya lo tenemos básico: access + refresh token).
+*Guardar sesión en el frontend:
+*Guardar el accessToken y refreshToken de manera segura (storage o cookies).
+*Manejar expiración (cuando el access token expire, usar el refresh).
+*Cerrar sesión (logout):
+*Borrar tokens del lado cliente.
+*Revocar tokens en el backend (ya tenemos parte preparada).
+
+--Completado--FASE 2 – Roles y control de acceso (EN CURSO)
+*Objetivo: UI dinámica según rol + backend protegido.
+*- Extraer roles del token en el frontend (React).
+* Configurar rutas seguras en el backend con SecurityFilterChain.
+*-Proteger rutas privadas y públicas en React.
+*Añadidos clave:
+ *Documentar API con Swagger (endpoints + roles).
+ *Agregar logging básico (quién accede a qué endpoint).
+
+Completado--FASE 3 – UX y mejoras
+ Pantalla de registro (signup).
+ Gestión de errores amigables (login fallido, permisos insuficientes).
+ Mejor UX: loaders, validaciones, feedback visual.
+ Implementar un Webhook simple (ej: evento de “nuevo registro” hacia tu backend).
+
+--En curso--FASE 4 – Infraestructura y despliegue (Docker)
+Objetivo: Proyecto listo para producción.
+ Aprender Docker (contenedores, imágenes, redes).
+ Crear Dockerfile para backend y frontend.
+ Crear docker-compose para levantar:
+Backend (Spring Boot).
+Frontend (React).
+Base de datos (PostgreSQL/MongoDB).
+
+FASE 5 – Eventos y mensajería (Kafka)
+Objetivo: Comunicación asíncrona real.
+
+ Entender Kafka (productores, consumidores, topics, grupos).
+ Levantar Kafka en Docker.
+ Mini-laboratorio: productor y consumidor en Java.
+ Publicar evento al iniciar sesión (“usuario X inició sesión”).
+Añadidos clave:
+ Integrar Webhooks + Kafka (ej: disparar eventos externos desde el backend).
+
+FASE 6 – Refactor y escalabilidad
+Objetivo: Sistema robusto y escalable.
+
+ Contexto global en React (gestión de sesión).
+
+ Interceptor para refrescar tokens automáticamente.
+
+ Kafka avanzado (particiones, grupos).
+Añadidos clave:
+
+ Implementar SSO con OAuth2/OpenID Connect (login con Google u otro proveedor).
+
+FASE 7 – (Opcional) Microservicios y despliegue avanzado
+Objetivo: Arquitectura profesional.
+
+ Separar backend en microservicios.
+
+ Comunicación entre servicios con Kafka.
+
+ Desplegar en Docker Swarm/Kubernetes.
+
+ Preparar CI/CD (GitHub Actions).

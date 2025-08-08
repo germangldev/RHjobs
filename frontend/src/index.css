@@ -1,0 +1,71 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+@tailwind typography;
+@tailwind forms;
+@tailwind aspect-ratio;
+@tailwind line-clamp;
+@tailwind animations;
+
+/* Variables de color */
+@layer base {
+  :root {
+    --color-primary: #464242;
+    --color-secondary: #464242;
+    --color-light: #f7f7f5;
+    --color-dark: #333333;
+    --color-accent: #f0c27b;
+  }
+  .dark {
+    --color-primary: #222222;
+    --color-secondary: #ffffffcc;
+    --color-light:  #333335;
+    --color-dark: #f7f7f5;
+    --color-accent: #d8aa5e;
+    --color-navbar: #2a2a2c;
+  }
+}
+
+/* Clases utilitarias */
+@layer utilities {
+  .bg-primary { background-color: var(--color-primary); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .bg-light { background-color: var(--color-light); }
+  .bg-dark { background-color: var(--color-dark); }
+  .bg-accent { background-color: var(--color-accent); }
+  .bg-navbar { background-color: var(--color-navbar); }
+
+  .text-primary { color: var(--color-primary); }
+  .text-secondary { color: var(--color-secondary); }
+  .text-light { color: var(--color-light); }
+  .text-dark { color: var(--color-dark); }
+  .text-accent { color: var(--color-accent); }
+
+   /* Hover personalizados */
+  .hover\:bg-primary:hover { background-color: var(--color-primary); }
+  .hover\:bg-secondary:hover { background-color: var(--color-secondary); }
+  .hover\:text-light:hover { color: var(--color-light); }
+  .hover\:text-dark:hover { color: var(--color-dark); }
+
+  /* Hover + dark mode */
+  .dark .dark\:hover\:bg-primary:hover { background-color: var(--color-primary); }
+  .dark .dark\:hover\:bg-secondary:hover { background-color: var(--color-secondary); }
+  .dark .dark\:hover\:text-light:hover { color: var(--color-light); }
+  .dark .dark\:hover\:text-dark:hover { color: var(--color-dark); }
+
+  /* Transiciones suaves */
+  .transition-theme {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+  }
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out;
+}
