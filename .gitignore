@@ -1,3 +1,13 @@
 # Ignorar secrets del backend
 backend/src/main/resources/application.yml
 backend/src/main/resources/application.properties
+# backend Java
+/backend/target/
+/backend/logs/
+/backend/.idea/
+/backend/.vscode/
+/backend/*.iml
+
+# genérico
+**/*.log
+.DS_Store
